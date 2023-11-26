@@ -1,0 +1,38 @@
+.input {
+    max-width: 1120px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.input .inputBox {
+    width: 85%;
+    border: none;
+    padding: 15px;
+    background-color: #eee;
+    outline: none;
+    border-radius: 50px;
+    font-size: 16px;
+    transition: 0.2s;
+}
+
+
+
+.input .addBtn {
+    width: 10%;
+    transition: 0.2s all;
+    cursor: pointer;
+    border-radius: 50px;
+    border: none;
+    background-color: #ff6b35ff;
+    color: #fff;
+}
+
+.addBtn:active {
+    transform: scale(0.8);
+    
+}
+
+i.fa-plus {
+    margin-right: 12px;
+}
