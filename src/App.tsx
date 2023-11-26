@@ -27,7 +27,7 @@ const App: React.FC = () => {
 
   return (
     <div>
-        <header className='heading'>Today or Never</header>
+        <header className='heading'>Start by doing what's necessary</header>
         <InputField todo={todo} setTodo={setTodo} handleAdd={handleAdd}/>
         <TodoList todos={todos} setTodos={setTodos} />
     </div>
