@@ -1,24 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import InputField from './components/InputField';
+import { Todo } from './model';
+import { listenerCount } from 'process';
+import TodoList from './components/TodoList';
 
-function App() {
+const App: React.FC = () => {
+  // data binding with input box
+  const [todo, setTodo] = useState<string>("");
+  
+  // todo list arr
+  const [todos, setTodos] = useState<Todo[]>([]);
+
+  // handle add btn
+  const handleAdd = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if(todo) {
+      setTodos([...todos, {id: Date.now(), todo: todo, isComplete: false}]);
+
+      setTodo("");
+    }
+  }
+
+  console.log(todos);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+        <header className='heading'>Today or Never</header>
+        <InputField todo={todo} setTodo={setTodo} handleAdd={handleAdd}/>
+        <TodoList todos={todos} setTodos={setTodos} />
     </div>
   );
 }
