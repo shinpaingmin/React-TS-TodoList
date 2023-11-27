@@ -1,3 +1,65 @@
+.bg-yellow {
+    color: #ffa700;
+  }
+
+  .bg-white {
+    background-color: #fff;
+    min-height: 100vh;
+    transition: background-color 0.5s;
+  }
+  
+  .bg-dark {
+    background-color: #000;
+    min-height: 100vh;
+    transition: background-color 0.5s;
+  }
+  
+  .mode {
+    cursor: pointer;
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    font-size: 20px;
+    transition: 0.2s ease;
+  }
+  
+  header {
+    display: grid;
+    place-content: center;
+  }
+  
+  .heading {
+    text-align: center;
+    margin: 30px 0 40px;
+    font-size: 30px;
+    font-weight: 300;
+    color: #ff6b35ff;
+    position: relative;
+    letter-spacing: 17px;
+  }
+  
+  .heading::before,
+  .heading::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+  
+  .heading::before {
+    background-color: #fff;
+    animation: typewriter 8s steps(13) .3s forwards;
+  }
+  
+  .heading::after {
+    width: 0.125em;
+    background-color: #ff6b35ff;
+    animation: typewriter 8s steps(13) .3s forwards, 
+                blink 750ms steps(13) infinite;
+  }
+
 .input {
     max-width: 1120px;
     margin: 0 auto;
@@ -8,7 +70,7 @@
 .input .inputBox {
     width: 85%;
     border: none;
-    padding: 15px;
+    padding: 15px 30px;
     background-color: #eee;
     outline: none;
     border-radius: 50px;
@@ -26,6 +88,7 @@
     border: none;
     background-color: #ff6b35ff;
     color: #fff;
+    font-weight: 700;
 }
 
 .addBtn:active {
@@ -34,5 +97,127 @@
 }
 
 i.fa-plus {
-    margin-right: 12px;
+    margin-right: 8px;
+}
+
+.container {
+    max-width: 1120px;
+    margin: 50px auto 0;
+    display: flex;
+    justify-content: space-between;
+    overflow-y: auto;
+}
+
+.container .todos {
+    width: 45%;
+    padding: 25px 20px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    align-self: flex-start;
+    margin-bottom: 25px;
+}
+
+.todo__heading {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 25px;
+}
+
+.blue {
+    color: #00CDFF;
+}
+
+.green {
+    color: #00f700ff;
+}
+
+.icon {
+    cursor: pointer;
+    margin-left: 12px;
+}
+
+.single_todo {
+    display: flex;
+    justify-content: space-between;
+    /* background-color: #00CDFF; */
+    margin: 0 0 20px;
+    padding: 12px;
+    transition: 0.2s;
+    cursor: grab;
+}
+
+.single_todo:hover {
+    box-shadow: 0 0 5px #00CDFF;
+    transform: scale(1.03);
+}
+
+.bg-blue {
+    background-color: #00CDFF;
+}
+
+.bg-green {
+    background-color: #00f700ff;
+}
+
+.line-through {
+    text-decoration: line-through;
+}
+
+@keyframes typewriter {
+    to{
+        left: 100%
+    }
+}
+
+@keyframes blink {
+    to {
+        background: transparent;
+    }
+}
+
+@media (max-width: 768px) {
+    .heading {
+        font-size: 16px;
+        margin-top: 50px;
+        letter-spacing: 12px;
+        font-weight: 700;
+    }
+
+    .input {
+        padding: 0 10px;
+    }
+
+    .input .inputBox {
+        width: 75%;
+        font-size: 14px;
+    }
+
+    .input .addBtn {
+        width: 20%;
+        font-weight: 500;
+        font-size: 14px;
+    }
+
+    i.fa-plus {
+        margin-right: 4px;
+    }
+
+    .container {
+        flex-direction: column;
+    }
+    
+    .container .todos {
+        width: 100%;
+    }
+
+    .container .todos:first-child {
+        margin: 0 0 30px;
+    }
+
+    .todo__heading {
+        font-size: 18px;
+    }
+
+    .content {
+        font-size: 14px;
+    }
 }
