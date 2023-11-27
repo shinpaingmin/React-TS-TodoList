@@ -7,11 +7,13 @@ interface Props {
     index: number;
     todo: Todo;
     todos: Todo[];
-    setTodos: React.Dispatch<React.SetStateAction<Todo[]>>
+    setTodos: React.Dispatch<React.SetStateAction<Todo[]>>;
+    completedTodos: Todo[];
+    setCompletedTodos: React.Dispatch<React.SetStateAction<Todo[]>>;
     bgColor: string;
 }
 
-const SingleTodo: React.FC<Props> = ({ index, todo, todos, setTodos, bgColor }) => {
+const SingleTodo: React.FC<Props> = ({ index, todo, todos, setTodos, completedTodos, setCompletedTodos, bgColor }) => {
     // useStates for edit todo
     const [edit, setEdit] = useState<boolean>(false);
     const [editTodo, setEditTodo] = useState<string>(todo.todo);
@@ -37,8 +39,14 @@ const SingleTodo: React.FC<Props> = ({ index, todo, todos, setTodos, bgColor }) 
 
     // complete action handling
     const handleComplete = (id: number) => {
-        // turn true to the completed task
-        setTodos(todos.map((todo) => todo.id === id ? {...todo, isComplete: true} : {...todo}));
+        // turn true to the completed task, and add to completed todo 
+
+        let done: Todo[] = todos.filter((todo) => todo.id === id);
+
+        done[0].isComplete = true;
+        
+        setCompletedTodos([...completedTodos, ...done]);
+        setTodos(todos.filter((todo) => todo.id !== id));
     }
 
     useEffect(() => {

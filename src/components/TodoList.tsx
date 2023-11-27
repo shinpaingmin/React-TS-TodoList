@@ -27,6 +27,8 @@ const TodoList: React.FC<Props> = ({ todos, setTodos, completedTodos, setComplet
                                                 todo={todo}
                                                 todos={todos}
                                                 setTodos={setTodos}
+                                                completedTodos={completedTodos}
+                                                setCompletedTodos={setCompletedTodos}
                                                 bgColor="bg-blue" />
                                 ))
                             }
@@ -48,6 +50,8 @@ const TodoList: React.FC<Props> = ({ todos, setTodos, completedTodos, setComplet
                                                     todo={todo}
                                                     todos={completedTodos}
                                                     setTodos={setCompletedTodos}
+                                                    completedTodos={[]}
+                                                    setCompletedTodos={() => {}}
                                                     bgColor="bg-green" />
                                     ))
                                 }
