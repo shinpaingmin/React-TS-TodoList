@@ -74,7 +74,7 @@ const SingleTodo: React.FC<Props> = ({ index, todo, todos, setTodos, completedTo
                                             onChange={(e) => setEditTodo(e.target.value)} />
                                 )
                             }
-                            <div>
+                            <div className='icon-container'>
                                 <span className="icon" onClick={() => !edit && !todo.isComplete ? setEdit(true) : setEdit(false)}>
                                     <i className="fa-solid fa-pen-to-square"></i>
                                 </span>

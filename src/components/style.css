@@ -162,6 +162,14 @@ i.fa-plus {
     text-decoration: line-through;
 }
 
+.content {
+    word-break: break-all;
+}
+
+.icon-container {
+    min-width: 85px;
+}
+
 @keyframes typewriter {
     to{
         left: 100%
