@@ -1,3 +1,12 @@
+# React-TS-TodoList
+1. This project was created by using react js and typescript. 
+2. React-Beautiful-dnd was used for drag-and-drop functionality for efficient list organization.
+
+## Features and Functionalities
+1. Drag-and-Drop functionality
+2. Light Mode & Dark Mode
+3. Animations
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
